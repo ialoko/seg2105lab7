@@ -43,11 +43,11 @@ public class LoginActivity extends AppCompatActivity {
             return "Invalid login!";
     }
 
-    public Boolean isEmail(String userName) {
+    public String isEmail(String userName) {
         if(userName != null && Patterns.EMAIL_ADDRESS.matcher(userName).matches()) {
-            return true;
+            return "true";
         } else {
-            return false;
+            return "false";
         }
     }
 }
