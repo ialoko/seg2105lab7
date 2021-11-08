@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.*;
 
@@ -39,5 +41,13 @@ public class LoginActivity extends AppCompatActivity {
             return "Login was successful";
         else
             return "Invalid login!";
+    }
+
+    public Boolean isEmail(String userName) {
+        if(userName != null && Patterns.EMAIL_ADDRESS.matcher(userName).matches()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
