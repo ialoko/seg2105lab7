@@ -15,6 +15,8 @@ import static org.hamcrest.CoreMatchers.*;
 public class LoginUnitTest {
 
     private static final String FAKE_STRING = "Login was successful";
+    private static final String valid_email = "true";
+    private static final String not_valid_email = "false";
 
     @Mock
     Context mMockContext;
@@ -34,15 +36,17 @@ public class LoginUnitTest {
     @Test
     public void testIsEmail(){ //testing if is email with valid input
         LoginActivity myObjectUnderTest = new LoginActivity(mMockContext);
-        Boolean result = myObjectUnderTest.isEmail("test@gmail.com");
-        assertEquals(result, true);
+        String email = "test@gmail.com";
+        Boolean result = myObjectUnderTest.isEmail(email);
+        assertThat(true, result);
 
     }
 
     @Test
     public void testIsNotEmail(){ //testing is email with invalid input
         LoginActivity myObjectUnderTest = new LoginActivity(mMockContext);
-        Boolean result = myObjectUnderTest.isEmail("test");
-        assertEquals(result, false);
+        String email = "test";
+        Boolean result = myObjectUnderTest.isEmail(email);
+        assertEquals(false, result);
     }
 }
