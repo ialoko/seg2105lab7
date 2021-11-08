@@ -30,4 +30,17 @@ public class LoginUnitTest {
         // ...then the result should be the expected one.
         assertThat(result, is(FAKE_STRING));
     }
+
+    @Test
+    public void testIsEmail(){ //testing if is email with valid input
+        LoginActivity myObjectUnderTest = new LoginActivity(mMockContext);
+        String result = myObjectUnderTest.
+
+    }
+
+    @Test
+    public void testIsNotEmail(){ //testing is email with invalid input
+        LoginActivity myObjectUnderTest = new LoginActivity(mMockContext);
+
+    }
 }
